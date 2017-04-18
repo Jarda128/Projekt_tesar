@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<film-app>
+<nastaveni-app>
+    <jazyk>CZ</jazyk>
+    <plug>
+        <komentar>1</komentar>
+        <online-pomoc>1</online-pomoc>
+        <hodnoceni-filmu>1</hodnoceni-filmu>
+        <vyhledavani>1</vyhledavani>
+    </plug>   
+    <kontakt-admin>jardatesar@knihovna.cz</kontakt-admin>
+    <media>
+        <twitter>wwww.twitter.com/knihy</twitter>
+        <facebook>wwww.facebook.com/knihy</facebook>        
+    </media>
+    <adata>
+        <grafika>
+            <background-color>Červená</background-color>
+            <font>Times New Roman</font>
+            <font-color>Modrá</font-color>
+            <font-size>12</font-size>
+        </grafika>
+    </adata>
+</nastaveni-app>
+
+
+    
+    
+<prava>
+    <typ-prav Pravo="Host">
+        <sledovani>0</sledovani>
+        <recenze>0</recenze>
+        <hodnoceni>0</hodnoceni>
+        <mazani-filmu>0</mazani-filmu>
+        <pridavani-filmu>0</pridavani-filmu>
+        <uprava-zanru>0</uprava-zanru>
+    </typ-prav>
+    <typ-prav Pravo="Uzivatel">
+        <sledovani>1</sledovani>
+        <recenze>1</recenze>
+        <hodnoceni>1</hodnoceni>
+        <mazani-filmu>0</mazani-filmu>
+        <pridavani-filmu>0</pridavani-filmu>
+        <uprava-zanru>0</uprava-zanru>
+    </typ-prav>
+    <typ-prav Pravo="Administrator">
+        <sledovani>1</sledovani>
+        <recenze>1</recenze>
+        <hodnoceni>1</hodnoceni>
+        <mazani-filmu>1</mazani-filmu>
+        <pridavani-filmu>1</pridavani-filmu>
+        <uprava-zanru>1</uprava-zanru>
+    </typ-prav>
+</prava>
+   
+    <uzivatel>
+            <osoba id="1">
+                <jmeno>Návštěvník</jmeno>
+                <prijmeni></prijmeni>
+                <prihlas-jmeno>host</prihlas-jmeno>
+                <prihlas-heslo>agSghG86</prihlas-heslo>
+                <typ-prav>Host</typ-prav>
+            </osoba>
+            <osoba id="2">
+                <jmeno>Filip</jmeno>
+                <prijmeni>Joshua</prijmeni>
+                <prihlas-jmeno>filip123</prihlas-jmeno>
+                <prihlas-heslo>kraAl098</prihlas-heslo>
+                <typ-prav>Uživatel</typ-prav>
+            </osoba>
+            <osoba id="3">
+                <jmeno>Admin</jmeno>
+                <prijmeni></prijmeni>
+                <prihlas-jmeno>Admin</prihlas-jmeno>
+                <prihlas-heslo>Admin123</prihlas-heslo>
+                <typ-prav>Admin</typ-prav>
+            </osoba>
+    </uzivatel>
+
+    <kino>
+        <typkina typ="Premiéra">
+            <nazevkina>Kino Anděl</nazevkina>
+            <filmid>"war001"</filmid>
+            <filmid>"war002"</filmid>
+            <filmid>"anim001"</filmid>
+        </typkina>
+        <typkina typ="Malá">
+            <nazevkina>Kino Zličín</nazevkina>
+            <filmid>"war003"</filmid>
+        </typkina>  
+        <typkina typ="Velká">
+            <nazevkina>Kino Flora</nazevkina>
+            <filmid>"sport001"</filmid>
+        </typkina>    
+        <typkina typ="Velká">
+            <nazevkina>Kino Hostivař</nazevkina>
+            <filmid>"muzik001"</filmid>
+        </typkina>    
+        <typkina typ="Malá">
+            <nazevkina>Kino Želivského</nazevkina>
+            <filmid>"roman001"</filmid>
+        </typkina>      
+    </kino>
+    
+    
+    <zanry>
+        <valecna>
+              <film id="war001">
+                <zanr>Válečný</zanr>
+                <nazev>Zachraňte vojína Rayena</nazev>
+                <pujceni>Ano</pujceni>
+                <kino>Ano</kino>
+                <rok>2014</rok>
+                <delka>120 min</delka>
+                <jazyk>CZ</jazyk>
+                <titulky>Ne</titulky>
+                <herec>Tom Hanks</herec>
+              </film>
+              <film id="war002">
+                <zanr>Válečný</zanr>
+                <nazev>Tenká červená linie</nazev>
+                <pujceni>Ne</pujceni>
+                <kino>Ano</kino>
+                <rok>2008</rok>
+                <delka>120 min</delka>
+                <jazyk>CZ</jazyk>
+                <titulky>Ne</titulky>
+                <herec>Mel Gibson</herec>
+              </film>
+              <film id="war003">
+                <zanr>Válečný</zanr>
+                <nazev>Nepřítel před branami</nazev>
+                <pujceni>Ano</pujceni>
+                <kino>Ne</kino>
+                <rok>1998</rok>
+                <delka>220 min</delka>
+                <jazyk>RU</jazyk>
+                <titulky>Ano</titulky>
+                <herec>Alexander Kozlov</herec>
+              </film>            
+        </valecna>
+        <sportovni>
+              <film id="sport001">
+                <zanr>Sportovní</zanr>
+                <nazev>Rychle a zběsile: 1</nazev>
+                <pujceni>Ano</pujceni>
+                <kino>Ne</kino>
+                <rok>1999</rok>
+                <delka>150 min</delka>
+                <jazyk>CZ</jazyk>
+                <titulky>Ne</titulky>
+                <herec>Paul Walker</herec>
+              </film>
+        </sportovni>
+        <muzikal>
+              <film id="muzik001">
+                <zanr>Muzikální</zanr>
+                <nazev>Láska nebeská</nazev>
+                <pujceni>Ano</pujceni>
+                <kino>Ne</kino>
+                <rok>2016</rok>
+                <delka>90 min</delka>
+                <jazyk>CZ</jazyk>
+                <titulky>Ne</titulky>
+                <herec>Brad Pitt</herec>
+              </film>
+        </muzikal>
+        <romantika>
+            <film id="roman001">
+                <zanr>romantika</zanr>
+                <nazev>Titanik</nazev>
+                <pujceni>Ano</pujceni>
+                <kino>Ne</kino>
+                <rok>2003</rok>
+                <delka>120 min</delka>
+                <jazyk>CZ</jazyk>
+                <titulky>Ne</titulky>
+                <herec>Leonardo DiCaprio</herec>
+              </film>
+        </romantika>
+        <animovany>
+            <film id="anim001">
+                <zanr>Animovaný</zanr>
+                <nazev>Já Padouch</nazev>
+                <pujceni>Ne</pujceni>
+                <kino>Ano</kino>
+                <rok>2014</rok>
+                <delka>100 min</delka>
+                <jazyk>CZ</jazyk>
+                <titulky>Ne</titulky>
+                <herec>Steve Carell</herec>
+              </film>
+        </animovany>
+    </zanry>
+</film-app>
