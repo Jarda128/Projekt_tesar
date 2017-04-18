@@ -14,7 +14,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                <xsl:for-each select="film-app/zanry/valecna">
                   <tr>
                      <td colspan="1">
-                        <xsl:for-each select="film[rok!=0]"><!-- Ošetření že žádný film nemá rok 0 může se nastavit určitý výběr pro specifičtější podmínky hledání-->
+                        <xsl:for-each select="film[rok = 2008]"><!-- Ošetření že žádný film nemá rok 0 může se nastavit určitý výběr pro specifičtější podmínky hledání-->
                            <xsl:sort select="rok" order="descending" />
                            <table style="background-color: red; border: 2px solid #ddd;">
                               <tr>

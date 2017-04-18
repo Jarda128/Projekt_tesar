@@ -1,0 +1,373 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+  <!-- Odkaz na github: https://github.com/Jarda128/Projekt_tesar -->
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="Author" content="Jaroslav Tesař">
+  <title>Dokumentace - Aplikace pro hodnocení filmů</title>     
+  </head>
+  <body>
+    <nav>
+      <h3>Orientace:</h3>
+      <ul>
+        <li><a href="#uvod">Úvod</a></li>
+        <li><a href="#metodika">Metodika</a></li>
+        <li><a href="#popis">Popis elementů a atributů</a></li>
+        <li><a href="#transf">Popis transformace</a></li>
+        <li><a href="#zaver">Závěr práce</a></li>
+      </ul>
+      <hr />
+    </nav>
+    <main>
+      <section id="uvod">
+        <article>
+          <header>
+            <h2>Úvod</h2>
+          </header>          
+          <p>
+          Jako téma mého semestrálního projektu jsem si vybral fiktivní aplikaci pro hodnocení shlédnutých filmů.
+          Toto téma jsem si zvolil, jelikož se mi zdálo zajímavé. Také si myslím, že filmy sleduje každý a ocení, když před návštěvou kina může zhodnotit, 
+          jakou bude mít film přibližně kvalitu. Díky této aplikaci se člověk může rozhodnout, jestli na film do kina vůbec půjde, v případě. Myslím si, že by tato aplikace
+          dnes určitě našla využití.
+          </p>
+          <p>XML soubor slouží k obecnému nastavení webové aplikace, ke konfiguraci práv jednotlivých uživatelů, a konfiguraci jednotlivých součástí aplikace.</p> 
+        </article>
+      </section>
+      <section id="metodika">
+        <article>
+          <header>
+            <h2>Metodika</h2>
+          </header>
+          <h3>Využité programy</h3>
+          <p>
+          Pro tvorbu tohoto projektu jsem použil programy <a href="https://netbeans.org/">NetBeans</a>, <a href="https://notepad-plus-plus.org/">NotePad</a>, 
+          a prohlížeč <a href="https://www.google.com/chrome/">Google Chrome</a>.    
+          </p>
+          <h3>Použité webové stránky</h3>
+          <p>
+            Většinu informací jsem našel na stránkách <a href="http://www.kosek.cz/">Kosek</a> a <a href="http://ww2.w3chools.com/?folio=9POSOZI1U">W3chools</a>, validaci projektu jsem provedl přes stránku 
+            <a href="https://validator.w3.org/">W3 validátor</a>.
+          </p>        
+        </article>
+      </section>
+      <section id="popis" >
+        <article>
+          <header>
+            <h2>Popis elementů a atributů</h2>
+          </header>
+          <h3>Seznam použitých elementů</h3>
+          <table border="1" id="elementy" title="Tabulka elementů">
+            <tr>
+              <td>Název elementu</td>
+              <td>Popis elementu</td>
+              <td>Omezení elementu</td>
+            </tr>
+            <tr>                       
+              <td>film-app</td>
+              <td>Tento element určuje název aplikace</td>
+              <td>Bez omezení</td>
+            </tr>
+            <tr>                       
+              <td>nastaveni-app</td>
+              <td>Udává základní nastavení aplikace</td>
+              <td>Bez omezení</td>
+            </tr> 
+            <tr>                       
+              <td>jazyk</td>
+              <td>Určuje, v jakém jazyce bude aplikace běžet</td>
+              <td>CZ, RU, EN, IT</td>
+            </tr>
+            <tr>                       
+              <td>plug</td>
+              <td>Určuje, jaké moduly (pluginy) budou v aplikaci povoleny</td>
+              <td>Bez omezení</td>
+            </tr>
+            <tr>                       
+              <td>komentar</td>
+              <td>Určuje zda v aplikaci budou povoleny komentáře</td>
+              <td>0, 1</td>
+            </tr>
+            <tr>                       
+              <td>online-pomoc</td>
+              <td>Určuje, zda bude k dispozici pomoc online</td>
+              <td>0, 1</td>
+            </tr>
+            <tr>                       
+              <td>hodnoceni-filmu</td>
+              <td>Určuje, zda bude v aplikaci možnost film zhodnotit</td>
+              <td>0, 1</td>
+            </tr>
+            <tr>                       
+              <td>vyhledavani</td>
+              <td>Určuje zda v aplikaci bude možnost filmy vyhledat</td>
+              <td>0,1 </td>
+            </tr>
+            <tr>                       
+              <td>kontakt-admin</td>
+              <td>Tento element obsahuje kontakt na administrátora aplikace</td>
+              <td>Stringové omezení</td>
+            </tr>
+            <tr>                       
+              <td>media</td>
+              <td>Umožňuje, aby aplikace obsahovala odkazy</td>
+              <td>Bez omezení</td>
+            </tr> 
+            <tr>                       
+              <td>twitter</td>
+              <td>Umožňuje, aby aplikace obsahovala odkaz na twitter</td>
+              <td>http, https</td>
+            </tr>
+            <tr>                       
+              <td>facebook</td>
+              <td>Umožňuje, aby aplikace obsahovala odkaz na facebook</td>
+              <td>http, https</td>
+            </tr>
+            <tr>                       
+              <td>adata</td>
+              <td>Je to element obsahující grafiku aplikace</td>
+              <td>Bez omezení</td>
+            </tr>
+            <tr>                       
+              <td>grafika</td>
+              <td>Umožňuje nastavit jednotlivé prvky grafiky aplikace</td>
+              <td>Bez omezení</td>
+            </tr>
+            <tr>                       
+              <td>background color</td>
+              <td>Umožňuje nastavit barvu pozadí aplikace</td>
+              <td>modrá, červená, zelená</td>
+            </tr>
+            <tr>                       
+              <td>font</td>
+              <td>Umožňuje nastavit druh fontu písma aplikace</td>
+              <td>Times New Roman, Arial, Comics</td>
+            </tr>
+            <tr>                       
+              <td>font-color</td>
+              <td>Umožňuje nastavit barvu písma</td>
+              <td>modrá, červená, zelená</td>
+            </tr>
+            <tr>                       
+              <td>font-size</td>
+              <td>Určuje celikost písma</td>
+              <td>Číslo v rozmezí 2 - 18</td>
+            </tr>
+            <tr>                       
+              <td>prava</td>
+              <td>Určuje uživatelskou roli, která je uživateli přidělena</td>
+              <td>host, uživatel, admin</td>
+            </tr>
+            <tr>                       
+              <td>typ-prav</td>
+              <td>Určuje typy práv, které jsou přidělena jednotlivým uživatelským rolím</td>
+              <td>Bez omezení</td>
+            </tr>
+            <tr>                       
+              <td>sledovani</td>
+              <td>Umožňuje uživateli prohlížet jednotlivé filmy</td>
+              <td>0, 1</td>
+            </tr>
+            <tr>                       
+              <td>recenze</td>
+              <td>Umožňuje uživateli psát recenze k jednotlivým filmům</td>
+              <td>0, 1</td>
+            </tr>
+            <tr>                       
+              <td>hodnoceni</td>
+              <td>Umožňuje uživateli hodnotit jednotlivé filmy</td>
+              <td>0, 1</td>
+            </tr>
+            <tr>                       
+              <td>mazani-filmu</td>
+              <td>Umožňuje uživateli mazat filmy z aplikace</td>
+              <td>0, 1</td>
+            </tr>
+            <tr>                       
+              <td>pridavani-filmu</td>
+              <td>Umožňuje uživateli přidávat filmy do aplikace</td>
+              <td>0, 1</td>
+            </tr>
+            <tr>                       
+              <td>uprava-zanru</td>
+              <td>Umožňuje uživateli měnit popis jednotlivých žánrů</td>
+              <td>0, 1</td>
+            </tr>
+            <tr>                       
+              <td>uzivatel</td>
+              <td>Určuje profil registrovaného uživatele</td>
+              <td>Bez omezení</td>
+            </tr>
+            <tr>                       
+              <td>osoba</td>
+              <td>Zajišťuje nastavení jednotlivých osob pomocí atributu id</td>
+              <td>Bez omezení</td>
+            </tr>
+            <tr>                       
+              <td>jmeno</td>
+              <td>Určuje jméno uživatele</td>
+              <td>Stringové omezení</td>
+            </tr>
+            <tr>                       
+              <td>prijmeni</td>
+              <td>Určuje příjmení uživatele</td>
+              <td>Stringové omezení</td>
+            </tr>
+            <tr>                       
+              <td>prihlas-jmeno</td>
+              <td>Určuje přihlašovací jméno uživatele</td>
+              <td>Stringové omezení</td>
+            </tr>
+            <tr>                       
+              <td>prihlas-heslo</td>
+              <td>Určuje heslo, pod kterým se uživatel přihlašuje</td>
+              <td>Stringové omezení, kombinace velkých a malých písmen, 8 znaků</td>
+            </tr>
+            <tr>                       
+              <td>kino</td>
+              <td>Obsahuje seznam všech kin</td>
+              <td>Bez omezení</td>
+            </tr>
+            <tr>                       
+              <td>typ-kina</td>
+              <td>Určuje typ kina a informace o něm</td>
+              <td>Bez omezení</td>
+            </tr>
+            <tr>                       
+              <td>nazev-kina</td>
+              <td>Určuje název vybraného kina</td>
+              <td>Stringové omezení</td>
+            </tr>
+            <tr>                       
+              <td>filmid</td>
+              <td>Určuje ID filmu, který se v kině promítá</td>
+              <td>Stringové omezení</td>
+            </tr>
+            <tr>                       
+              <td>zanry</td>
+              <td>Určuje žánry všech dostupných filmů</td>
+              <td>Bez omezení</td>
+            </tr>
+            <tr>                       
+              <td>film</td>
+              <td>Udává popis vybraného filmu</td>
+              <td>Bez omezení</td>
+            </tr>
+            <tr>                       
+              <td>valecna</td>
+              <td>Určuje válečné filmy</td>
+              <td>Bez omezení</td>
+            </tr>
+            <tr>                       
+              <td>sportovni</td>
+              <td>Určuje sportovní filmy</td>
+              <td>Bez omezení</td>
+            </tr>
+            <tr>                       
+              <td>muzikal</td>
+              <td>Určuje muzikály</td>
+              <td>Bez omezení</td>
+            </tr>
+            <tr>                       
+              <td>romantika</td>
+              <td>Určuje romantické filmy</td>
+              <td>Bez omezení</td>
+            </tr>
+            <tr>                       
+              <td>animovany</td>
+              <td>Určuje animované filmy</td>
+              <td>Bez omezení</td>
+            </tr>
+            <tr>                       
+              <td>zanr</td>
+              <td>Určuje žánr vybraného filmu</td>
+              <td>Stringové omezení</td>
+            </tr>
+            <tr>                       
+              <td>nazev</td>
+              <td>Určuje název vybraného filmu</td>
+              <td>Stringové omezení</td>
+            </tr>
+            <tr>                       
+              <td>pujceni</td>
+              <td>Možnost zapůjčit si DVD</td>
+              <td>Ano, Ne</td>
+            </tr>
+            <tr>                       
+              <td>kino</td>
+              <td>Určuje, zda film je možné v kině vidět</td>
+              <td>Ano, Ne</td>
+            </tr>
+            <tr>                       
+              <td>rok</td>
+              <td>Určuje rok vydání filmu</td>
+              <td>Číslo v rozmezí 1940 - 2018 (trailery na novinky)</td>
+            </tr>
+            <tr>                       
+              <td>delka</td>
+              <td>Určuje délku vybraného filmu</td>
+              <td>Stringové omezení</td>
+            </tr>
+            <tr>                       
+              <td>jazyk</td>
+              <td>Určuje jazyk, ve kterém je film mluven</td>
+              <td>CZ, RU, EN, IT</td>
+            </tr>
+            <tr>                       
+              <td>titulky</td>
+              <td>Určuje, jestli jsou u filmu dostupné titulky</td>
+              <td>Ano, Ne</td>
+            </tr>
+            <tr>                       
+              <td>herec</td>
+              <td>Určuje herce, který hraje ve filmu hlavní roli</td>
+              <td>Stringové omezení</td>
+            </tr>
+          </table>
+          <h3>Seznam použitých atributů</h3>
+          <table border="1" id="atributy" title="Tabulka atributů">
+            <tr>
+              <td>Název atributu</td>
+              <td>Popis atributu</td>
+            </tr>
+            <tr>                       
+              <td>Pravo</td>
+              <td>Určuje název daného oprávnění</td>
+            </tr>
+            <tr>                       
+              <td>id</td>
+              <td>Určuje identifikační číslo dané osoby</td>
+            </tr>
+            <tr>                       
+              <td>typ</td>
+              <td>Určuje název typu daného kina</td>
+            </tr>                      
+          </table>
+        </article>
+      </section>
+      <section id="transf">
+        <article>
+          <header>
+            <h2>Popis transformace</h2>
+          </header>
+            <p>
+             Transformace pomocí cyklu for-each vybere a odešle informace o všech filmech, které byly natočeny v roce 2008, všechny informace seřadí podle roku, a obsahuje žánr,název,rok,délku,jazyk,herce a pomocí ifelse jsme vyřešili dostupnost na dvd, kino a titulky.    
+            </p>
+        </article>
+      </section>
+      <section id="zaver">
+        <article>
+          <header>
+            <h2>Závěr</h2>
+          </header>
+          <p>Při práci na tomto projektu jsem si vyzkoušel práci s XML a HTML. Myslím si, že to byla pro mě dobrá zkušenost a určitě to v budoucnu využiji.
+          Při větším rozsahu aplikace by bylo za potřebí udělat konkrétní omezení pro všechny elementy, protože aplikace bude poté správně zabezpečena. 
+          Také by bylo určitě dobré aplikaci uspořádat jinak, protože jsou všechny citlivé informace uloženy pouze v XML dokumentu.
+          </p>
+        </article>
+      </section>
+    </main>
+    <footer>
+    <p>Autor: <strong>Jaroslav Tesař</strong> | Česká Zemědělská univerzita Praha, dne 18.4.2017</p>
+    </footer>
+  </body>
+</html>
