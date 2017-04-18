@@ -1,0 +1,276 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="film-app">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="nastaveni-app">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="jazyk"/>
+              <xs:element name="plug">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="y-n" name="komentar"/>
+                    <xs:element type="y-n" name="online-pomoc"/>
+                    <xs:element type="y-n" name="hodnoceni-filmu"/>
+                    <xs:element type="y-n" name="vyhledavani"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:string" name="kontakt-admin"/>
+              <xs:element name="media">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:anyURI" name="twitter"/> <!-- Zde jsem upravil type na anyURI pro URL-->
+                    <xs:element type="xs:anyURI" name="facebook"/> <!-- Zde jsem upravil type na anyURI pro URL-->
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="adata">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="grafika">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="barva" name="background-color"/>
+                          <xs:element type="styl" name="font"/>
+                          <xs:element type="barva" name="font-color"/>
+                          <xs:element type="velikost" name="font-size"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="prava">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="typ-prav" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="y-n" name="sledovani"/>
+                    <xs:element type="y-n" name="recenze"/>
+                    <xs:element type="y-n" name="hodnoceni"/>
+                    <xs:element type="y-n" name="mazani-filmu"/>
+                    <xs:element type="y-n" name="pridavani-filmu"/>
+                    <xs:element type="y-n" name="uprava-zanru"/>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="Pravo" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="uzivatel">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="osoba" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="jmeno"/>
+                    <xs:element type="xs:string" name="prijmeni"/>
+                    <xs:element type="xs:string" name="prihlas-jmeno"/>
+                    <xs:element type="heslo" name="prihlas-heslo"/>
+                    <xs:element type="prava" name="typ-prav"/>
+                  </xs:sequence>
+                  <xs:attribute type="xs:byte" name="id" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="kino">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="typkina" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="nazevkina"/>
+                    <xs:element type="xs:string" name="filmid" maxOccurs="unbounded" minOccurs="0"/>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="typ" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="zanry">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="valecna">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="film" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType mixed="true">
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="zanr"/>
+                          <xs:element type="xs:string" name="nazev"/>
+                          <xs:element type="dostupnost" name="pujceni"/>
+                          <xs:element type="dostupnost" name="kino"/>
+                          <xs:element type="rocnik" name="rok"/>
+                          <xs:element type="xs:string" name="delka"/>
+                          <xs:element type="ja" name="jazyk"/>
+                          <xs:element type="dostupnost" name="titulky"/>
+                          <xs:element type="xs:string" name="herec"/>
+                        </xs:sequence>
+                        <xs:attribute type="xs:string" name="id" use="optional"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="sportovni">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="film">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="zanr"/>
+                          <xs:element type="xs:string" name="nazev"/>
+                          <xs:element type="dostupnost" name="pujceni"/>
+                          <xs:element type="dostupnost" name="kino"/>
+                          <xs:element type="rocnik" name="rok"/>
+                          <xs:element type="xs:string" name="delka"/>
+                          <xs:element type="ja" name="jazyk"/>
+                          <xs:element type="dostupnost" name="titulky"/>
+                          <xs:element type="xs:string" name="herec"/>
+                        </xs:sequence>
+                        <xs:attribute type="xs:string" name="id"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="muzikal">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="film">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="zanr"/>
+                          <xs:element type="xs:string" name="nazev"/>
+                          <xs:element type="dostupnost" name="pujceni"/>
+                          <xs:element type="dostupnost" name="kino"/>
+                          <xs:element type="rocnik" name="rok"/>
+                          <xs:element type="xs:string" name="delka"/>
+                          <xs:element type="ja" name="jazyk"/>
+                          <xs:element type="dostupnost" name="titulky"/>
+                          <xs:element type="xs:string" name="herec"/>
+                        </xs:sequence>
+                        <xs:attribute type="xs:string" name="id"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="romantika">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="film">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="zanr"/>
+                          <xs:element type="xs:string" name="nazev"/>
+                          <xs:element type="dostupnost" name="pujceni"/>
+                          <xs:element type="dostupnost" name="kino"/>
+                          <xs:element type="rocnik" name="rok"/>
+                          <xs:element type="xs:string" name="delka"/>
+                          <xs:element type="ja" name="jazyk"/>
+                          <xs:element type="dostupnost" name="titulky"/>
+                          <xs:element type="xs:string" name="herec"/>
+                        </xs:sequence>
+                        <xs:attribute type="xs:string" name="id"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="animovany">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="film">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="zanr"/>
+                          <xs:element type="xs:string" name="nazev"/>
+                          <xs:element type="dostupnost" name="pujceni"/>
+                          <xs:element type="dostupnost" name="kino"/>
+                          <xs:element type="rocnik" name="rok"/>
+                          <xs:element type="xs:string" name="delka"/>
+                          <xs:element type="ja" name="jazyk"/>
+                          <xs:element type="dostupnost" name="titulky"/>
+                          <xs:element type="xs:string" name="herec"/>
+                        </xs:sequence>
+                        <xs:attribute type="xs:string" name="id"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+ <xs:simpleType name="rocnik"> <!--Stanovili jsme si rok 1940 od kterého budou filmy k dispozici. Limitem pro nás bude rok 2018 na které vycházejí trailery na novinky -->
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="1940"/>
+      <xs:maxInclusive value="2018"/>
+    </xs:restriction>
+  </xs:simpleType> 
+<xs:simpleType name="barva"> <!-- Omezení barev na pozadí / fontu -->
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ÄŒervenÃ¡"/>
+      <xs:enumeration value="ModrÃ¡"/>
+      <xs:enumeration value="ZelenÃ¡"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="styl"> <!-- Omezení pro styl písmen, které aplikace podporuje -->
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Times New Roman"/>
+      <xs:enumeration value="Arial"/>
+      <xs:enumeration value="Comics"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="velikost"> <!-- Omezení pro velikost písmen -->
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="2"/>
+      <xs:maxInclusive value="18"/>
+    </xs:restriction>
+  </xs:simpleType> 
+  <xs:simpleType name="y-n"> <!-- Nastavená promìnná y-n kde reprezentuje zda jsou zaplé nebo vyplé featury -->
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="1"/>
+    </xs:restriction>
+  </xs:simpleType> 
+  <xs:simpleType name="dostupnost"> <!-- Dostupnost titulkù / kina nebo pùjèení DVD -->
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Ano"/>
+      <xs:enumeration value="Ne"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="prava"> <!-- Nastavení práv -->
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Host"/>
+      <xs:enumeration value="UÅ¾ivatel"/>
+      <xs:enumeration value="Admin"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="heslo"> <!-- Nastavení hesla na 8 znakù, kombinace malých a velkých písmen a èísel. -->
+    <xs:restriction base="xs:string">
+       <xs:pattern value="[a-zA-Z0-9]{8}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ja"> <!-- Nastavení jazyka, protože aplikace podporuje více jazykù. -->
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CZ"/>
+      <xs:enumeration value="RU"/>
+      <xs:enumeration value="EN"/>
+      <xs:enumeration value="IT"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
